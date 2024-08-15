@@ -277,6 +277,18 @@
 				{
 					"match":"(?i)\\b(CONCAT)\\b",
 					"name":"support.function.scl"
+				},
+				{
+					"match":"(?i)\\b(LOWER_BOUND)\\b",
+					"name":"support.function.scl"
+				},
+				{
+					"match":"(?i)\\b(UPPER_BOUND)\\b",
+					"name":"support.function.scl"
+				},
+				{
+					"match":"(?i)\\b(REF)\\b",
+					"name":"support.function.scl"
 				}
 			]
 		},
