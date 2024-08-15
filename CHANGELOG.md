@@ -2,6 +2,9 @@
 All notable changes to the "scl" extension will be documented in this file.
 
 ## [Latest]
+- Added support for `REF_TO`, `REF`, `Variant`, `UPPER_BOUND`, `LOWER_BOUND` and correct highlightning of time/date constants
+
+## [0.2.1]
 - Added DTL and ENO to datatypes
 - Added highlighting of some more key words
 - Added highlighting of some functions
