@@ -7,7 +7,7 @@ The syntax highlighting (and most snippets) work for other IEC 61131-3 Structure
  - [Cloud-based IEC 61131-3 Development Environment](https://marketplace.visualstudio.com/items?itemName=david9991.plcc-plugin) by [david9991](https://github.com/david9991/plcc-plugin)
  - [Structured Text language Support](https://marketplace.visualstudio.com/items?itemName=Serhioromano.vscode-st) by [Serhioromano](https://github.com/Serhioromano/vscode-st)
 
-This code is forked from [gunders89's outdated version](https://github.com/Gunders89/vscode-scl).
+This code is forked from [gunders89's version](https://github.com/Gunders89/vscode-scl).
 
 ## Download
 Download this extension through Visual Studio Code (search in Extensions), or click this [link](https://marketplace.visualstudio.com/items?itemName=sikilde.vscode-siemens-scl).
