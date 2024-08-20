@@ -1,0 +1,25 @@
+FUNCTION "fcCheckString" : String
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      in_sString : String;
+   END_VAR
+
+BEGIN
+	// Double multi comments fails
+	(*Lets say I have this, which is already wrapped around some code that is commented
+	
+	IF (#in_sString = '\') THEN
+	    #fcCheckString := '\ present!'
+	(*ELSE
+	    #fcCheckString := '\ NOT present!'*)
+	Then the code after the first "end comment" will appear as valid code
+	END_IF;
+	
+	But everything is in fact commented out
+	*)
+
+	// Except this
+	#fcCheckString := '';
+	
+END_FUNCTION

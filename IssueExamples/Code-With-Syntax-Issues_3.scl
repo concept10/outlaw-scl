@@ -1,0 +1,22 @@
+FUNCTION_BLOCK "fbReset_Timer_Example"
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR 
+      _iState { ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'} : Int;
+      _tonMoveTime {InstructionName := 'TON_TIME'; LibVersion := '1.0'; ExternalAccessible := 'False'; ExternalVisible := 'False'; ExternalWritable := 'False'; S7_SetPoint := 'False'} : TON_TIME;
+   END_VAR
+
+
+BEGIN
+	CASE #_iState OF
+	    0:
+	        #_tonMoveTime(IN := TRUE,
+	                      PT := T#10s);
+	        IF (#_tonMoveTime.Q) THEN
+	            RESET_TIMER(#_tonMoveTime);
+	            #_iState += 10;
+	        END_IF;
+	END_CASE;
+	            
+END_FUNCTION_BLOCK
+

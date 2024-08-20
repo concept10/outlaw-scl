@@ -1,0 +1,16 @@
+FUNCTION "fcCheckString" : String
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_INPUT 
+      in_sString : String;
+   END_VAR
+
+BEGIN
+	// This is a test to show a issue with the syntax highlightning
+	IF (#in_sString = '\') OR (#in_sString = '\t') THEN
+		// Lets check if '\' or '\t' is present
+	    #fcCheckString := '\ or \t present!'
+	ELSE
+	    #fcCheckString := '\ or \t NOT present!'
+	END_IF;
+END_FUNCTION
