@@ -1,0 +1,1468 @@
+{
+    "If-statement":{
+        "prefix": "if",
+        "body": [
+            "if ${1:_condition_} then",
+            "\t${2://code};",
+            "end_if;",
+            "${3:}"
+        ],
+        "description" : "If clause"
+    },
+    "If-else":{
+        "prefix": "ife",
+        "body": [
+            "if ${1:_condition_} then",
+            "\t${2://code};",
+            "else",
+            "\t${3:\/\/code};",
+            "end_if;",
+            "${4:}"
+        ],
+        "description" : "If-else clause"
+    },
+    "If-elseif":{
+        "prefix": "iff",
+        "body": [
+            "if ${1:_condition_} then ",
+            "\t${2:\/\/code};",
+            "elsif ${3:_condition_} then",
+            "\t${4://code};",
+            "end_if;",
+            "${5:}"
+        ],
+        "description" : "If-elsif clause"
+    },
+    "If-elseif-else":{
+        "prefix": "iffe",
+        "body": [
+            "if ${1:_condition_} then",
+            "\t${2://code};",
+            "elsif ${3:_condition_} then",
+            "\t${4://code};",
+            "else",
+            "\t${5://code};",
+            "end_if;",
+            "${6:}"
+        ],
+        "description" : "If-elsif-else clause"
+    },
+    "Case-else":{
+        "prefix": "case",
+        "body": [
+            "case ${1:_variable_name_} of",
+            "\t${2:1}:",
+            "\t\t${3://Statement section case 1};",
+            "\t${4:2..4}:",
+            "\t\t${5://Statement section case 2 to 4};",
+            "\telse",
+            "\t${6://Statement section else};",
+            "end_case;",
+            "${7:}"
+        ],
+        "description" : "Case clause"
+    },
+    "For-loop":{
+        "prefix": "for",
+        "body": [
+            "for ${1:_variable_}:=${2:_value_} to ${3:_value_} do",
+            "\t${4://code};",
+            "end_for;",
+            "${5:}"
+        ],
+        "description" : "For-loop"
+    },
+    "While-loop":{
+        "prefix": "while",
+        "body": [
+            "while ${1:_condition_} do",
+            "\t${2://code};",
+            "end_while;",
+            "${3:}"
+        ],
+        "description" : "While-loop"
+    },
+    "Repeat-statement":{
+        "prefix": "repeat",
+        "body": [
+            "repeat ${1:_result_} := ${2:_value_};",
+            "until ${3:_condition_}",
+            "end_repeat;",
+            "${4:}"
+        ],
+        "description" : "Repeat-loop"
+    },
+    "New variable":{
+        "prefix": "nvar",
+        "body": [
+            "${1:_variable_name_} : ${2:DataType} ;",
+            "\t${3:}"
+        ],
+        "description" : "Variable declaration"
+    },
+    "New struct":{
+        "prefix": "struct",
+        "body": [
+            "${1:_struct_name_} :STRUCT",
+            "\t${2://structElements}",
+            "END_STRUCT;"
+        ],
+        "description" : "Struct clause"
+    },
+    "New array":{
+        "prefix": "arr",
+        "body": [
+            "${1:_array_name_} : ARRAY[${2:lo}..${3:hi}] OF ${4:DataType} ;",
+            "\t${5:}"
+        ],
+        "description" : "Array declaration"
+    },
+    "New var AT":{
+        "prefix": "varat",
+        "body": [
+            "${1:_variable_name_} AT ${2:_at_var_} : ${3:DataType} ;",
+            "\t${4:}"
+        ],
+        "description" : "Variable AT instruction"
+    },
+    "Create a Region":{
+        "prefix": "region",
+        "body": [
+            "REGION ${1:_region_name_}",
+            "\t${2:_body_}",
+            "END_REGION"
+        ],
+        "description" : "Variable AT instruction"
+    },
+    "bool_to_byte":{
+      "prefix":"bo2b",
+      "body": ["bool_to_byte(${1:})"],
+      "description": "Convert bool to byte"
+    },
+    "bool_to_dword":{
+      "prefix":"bo2dw",
+      "body": ["bool_to_dword(${1:})"],
+      "description": "Convert bool to double word"
+    },
+    "bool_to_word":{
+      "prefix":"bo2w",
+      "body": ["bool_to_word(${1:})"],
+      "description": "Convert bool to word"
+    },
+    "bool_to_int":{
+      "prefix":"bo2i",
+      "body": ["bool_to_int(${1:})"],
+      "description": "Convert bool to int"
+    },
+    "bool_to_dint":{
+      "prefix":"bo2di",
+      "body": ["bool_to_dint(${1:})"],
+      "description": "Convert bool to double int"
+    },
+    "byte_to_bool":{
+      "prefix":"b2bo",
+      "body": ["byte_to_bool(${1:})"],
+      "description": "Convert byte to bool"
+    },
+    "byte_to_char":{
+      "prefix":"b2c",
+      "body": ["byte_to_char(${1:})"],
+      "description": "Convert byte to char"
+    },
+    "byte_to_dword":{
+      "prefix":"b2dw",
+      "body": ["byte_to_dword(${1:})"],
+      "description": "Convert byte to double word"
+    },
+    "byte_to_word":{
+      "prefix":"b2w",
+      "body": ["byte_to_word(${1:})"],
+      "description": "Convert byte to word"
+    },
+    "byte_to_int":{
+      "prefix":"b2i",
+      "body": ["byte_to_int(${1:})"],
+      "description": "Convert byte to int"
+    },
+    "byte_to_dint":{
+      "prefix":"b2di",
+      "body": ["byte_to_dint(${1:})"],
+      "description": "Convert byte to double int"
+    },
+    "char_to_byte":{
+      "prefix":"c2b",
+      "body": ["char_to_byte(${1:})"],
+      "description": "Convert char to byte"
+    },
+    "char_to_int":{
+      "prefix":"c2i",
+      "body": ["char_to_int(${1:})"],
+      "description": "Convert char to int"
+    },
+    "char_to_string":{
+      "prefix":"c2s",
+      "body": ["char_to_string(${1:})"],
+      "description": "Convert char to string"
+    },
+    "char_to_wstring":{
+      "prefix":"c2ws",
+      "body": ["char_to_wstring(${1:})"],
+      "description": "Convert char to wstring"
+    },
+    "date_to_dint":{
+      "prefix":"d2di",
+      "body": ["date_to_dint(${1:})"],
+      "description": "Convert date to double int"
+    },
+    "dint_to_date":{
+      "prefix":"di2d",
+      "body": ["dint_to_date(${1:})"],
+      "description": "Convert dint to date"
+    },
+    "dint_to_dword":{
+      "prefix":"di2dw",
+      "body": ["dint_to_dword(${1:})"],
+      "description": "Convert double int to double word"
+    },
+    "dint_to_int":{
+      "prefix":"di2i",
+      "body": ["dint_to_int(${1:})"],
+      "description": "Convert double int to int"
+    },
+    "dint_to_time":{
+      "prefix":"di2t",
+      "body": ["dint_to_time(${1:})"],
+      "description": "Convert double int to time"
+    },
+    "dint_to_tod":{
+      "prefix":"di2tod",
+      "body": ["dint_to_tod(${1:})"],
+      "description": "Convert double int to time of day"
+    },
+    "dint_to_bool":{
+      "prefix":"di2bo",
+      "body": ["dint_to_bool(${1:})"],
+      "description": "Convert double int to bool"
+    },
+    "dint_to_byte":{
+      "prefix":"di2b",
+      "body": ["dint_to_byte(${1:})"],
+      "description": "Convert double int to byte"
+    },
+    "dint_to_real":{
+      "prefix":"di2r",
+      "body": ["dint_to_real(${1:})"],
+      "description": "Convert double int to real"
+    },
+    "dint_to_string":{
+      "prefix":"di2s",
+      "body": ["dint_to_string(${1:})"],
+      "description": "Convert double int to string"
+    },
+    "dint_to_wstring":{
+      "prefix":"di2ws",
+      "body": ["dint_to_wstring(${1:})"],
+      "description": "Convert double int to wstring"
+    },
+    "dint_to_word":{
+      "prefix":"di2w",
+      "body": ["dint_to_word(${1:})"],
+      "description": "Convert double int to word"
+    },
+    "dword_to_bool":{
+      "prefix":"dw2bo",
+      "body": ["dword_to_bool(${1:})"],
+      "description": "Convert double word to bool"
+    },
+    "dword_to_byte":{
+      "prefix":"dw2b",
+      "body": ["dword_to_byte(${1:})"],
+      "description": "Convert double word to byte"
+    },
+    "dword_to_dint":{
+      "prefix":"dw2di",
+      "body": ["dword_to_dint(${1:})"],
+      "description": "Convert double word to double int"
+    },
+    "dword_to_real":{
+      "prefix":"dw2r",
+      "body": ["dword_to_real(${1:})"],
+      "description": "Convert double word to real"
+    },
+    "dword_to_word":{
+      "prefix":"dw2w",
+      "body": ["dword_to_word(${1:})"],
+      "description": "Convert double word to word"
+    },
+    "dword_to_int":{
+      "prefix":"dw2i",
+      "body": ["dword_to_int(${1:})"],
+      "description": "Convert double word to int"
+    },
+    "int_to_char":{
+      "prefix":"i2c",
+      "body": ["int_to_char(${1:})"],
+      "description": "Convert int to char"
+    },
+    "int_to_dint":{
+      "prefix":"i2di",
+      "body": ["int_to_dint(${1:})"],
+      "description": "Convert int to double int"
+    },
+    "int_to_word":{
+      "prefix":"i2w",
+      "body": ["int_to_word(${1:})"],
+      "description": "Convert int to word"
+    },
+    "int_to_byte":{
+      "prefix":"i2b",
+      "body": ["int_to_byte(${1:})"],
+      "description": "Convert int to byte"
+    },
+    "int_to_dword":{
+      "prefix":"i2dw",
+      "body": ["int_to_dword(${1:})"],
+      "description": "Convert int to double word"
+    },
+    "int_to_real":{
+      "prefix":"i2r",
+      "body": ["int_to_real(${1:})"],
+      "description": "Convert int to real"
+    },
+    "int_to_string":{
+      "prefix":"i2s",
+      "body": ["int_to_string(${1:})"],
+      "description": "Convert int to string"
+    },
+    "int_to_wstring":{
+      "prefix":"i2ws",
+      "body": ["int_to_wstring(${1:})"],
+      "description": "Convert int to wstring"
+    },
+    "real_to_dint":{
+      "prefix":"r2di",
+      "body": ["real_to_dint(${1:})"],
+      "description": "Convert real to double int"
+    },
+    "real_to_dword":{
+      "prefix":"r2dw",
+      "body": ["real_to_dword(${1:})"],
+      "description": "Convert real to double word"
+    },
+    "real_to_int":{
+      "prefix":"r2i",
+      "body": ["real_to_int(${1:})"],
+      "description": "Convert real to int"
+    },
+    "real_to_string":{
+      "prefix":"r2s",
+      "body": ["real_to_string(${1:})"],
+      "description": "Convert real to string"
+    },
+    "real_to_wstring":{
+      "prefix":"r2ws",
+      "body": ["real_to_wstring(${1:})"],
+      "description": "Convert real to wstring"
+    },
+    "string_to_char":{
+      "prefix":"s2c",
+      "body": ["string_to_char(${1:})"],
+      "description": "Convert string to char"
+    },
+    "string_to_wchar":{
+      "prefix":"s2wc",
+      "body": ["string_to_wchar(${1:})"],
+      "description": "Convert string to wchar"
+    },
+    "string_to_int":{
+      "prefix":"s2i",
+      "body": ["string_to_int(${1:})"],
+      "description": "Convert string to int"
+    },
+    "string_to_lint":{
+      "prefix":"s2li",
+      "body": ["string_to_lint(${1:})"],
+      "description": "Convert string to long int"
+    },
+    "string_to_uint":{
+      "prefix":"s2ui",
+      "body": ["string_to_uint(${1:})"],
+      "description": "Convert string to unsigned int"
+    },
+    "string_to_usint":{
+      "prefix":"s2usi",
+      "body": ["string_to_usint(${1:})"],
+      "description": "Convert string to unsigned short int"
+    },
+    "string_to_dint":{
+      "prefix":"s2di",
+      "body": ["string_to_dint(${1:})"],
+      "description": "Convert string to double int"
+    },
+    "string_to_udint":{
+      "prefix":"s2udi",
+      "body": ["string_to_udint(${1:})"],
+      "description": "Convert string to unsigned double int"
+    },
+    "string_to_real":{
+      "prefix":"s2r",
+      "body": ["string_to_real(${1:})"],
+      "description": "Convert string to real"
+    },
+    "string_to_lreal":{
+      "prefix":"s2lr",
+      "body": ["string_to_lreal(${1:})"],
+      "description": "Convert string to long real"
+    },
+    "string_to_wstring":{
+      "prefix":"s2ws",
+      "body": ["string_to_wstring(${1:})"],
+      "description": "Convert string to wstring"
+    },
+    "wstring_to_char":{
+      "prefix":"ws2c",
+      "body": ["wstring_to_char(${1:})"],
+      "description": "Convert wstring to char"
+    },
+    "wstring_to_wchar":{
+      "prefix":"ws2wc",
+      "body": ["wstring_to_wchar(${1:})"],
+      "description": "Convert wstring to wchar"
+    },
+    "wstring_to_int":{
+      "prefix":"ws2i",
+      "body": ["wstring_to_int(${1:})"],
+      "description": "Convert wstring to int"
+    },
+    "wstring_to_lint":{
+      "prefix":"ws2li",
+      "body": ["wstring_to_lint(${1:})"],
+      "description": "Convert wstring to long int"
+    },
+    "wstring_to_sint":{
+      "prefix":"ws2si",
+      "body": ["wstring_to_sint(${1:})"],
+      "description": "Convert wstring to short int"
+    },
+    "wstring_to_uint":{
+      "prefix":"ws2ui",
+      "body": ["wstring_to_uint(${1:})"],
+      "description": "Convert wstring to unsigned int"
+    },
+    "wstring_to_usint":{
+      "prefix":"ws2usi",
+      "body": ["wstring_to_usint(${1:})"],
+      "description": "Convert wstring to unsigned short int"
+    },
+    "wstring_to_dint":{
+      "prefix":"ws2di",
+      "body": ["wstring_to_dint(${1:})"],
+      "description": "Convert wstring to double int"
+    },
+    "wstring_to_udint":{
+      "prefix":"ws2udi",
+      "body": ["wstring_to_udint(${1:})"],
+      "description": "Convert wstring to unsigned double int"
+    },
+    "wstring_to_real":{
+      "prefix":"ws2r",
+      "body": ["wstring_to_real(${1:})"],
+      "description": "Convert wstring to real"
+    },
+    "wstring_to_lreal":{
+      "prefix":"ws2lr",
+      "body": ["wstring_to_lreal(${1:})"],
+      "description": "Convert wstring to lreal"
+    },
+    "wstring_to_string":{
+      "prefix":"ws2s",
+      "body": ["wstring_to_lreal(${1:})"],
+      "description": "Convert wstring to string"
+    },
+    "time_to_dint":{
+      "prefix":"t2di",
+      "body": ["time_to_dint(${1:})"],
+      "description": "Convert time to double int"
+    },
+    "tod_to_dint":{
+      "prefix":"tod2di",
+      "body": ["tod_to_dint(${1:})"],
+      "description": "Convert time of day to double int"
+    },
+    "word_to_bool":{
+      "prefix":"w2bo",
+      "body": ["word_to_bool(${1:})"],
+      "description": "Convert word to bool"
+    },
+    "word_to_byte":{
+      "prefix":"w2b",
+      "body": ["word_to_byte(${1:})"],
+      "description": "Convert word to byte"
+    },
+    "word_to_int":{
+      "prefix":"w2i",
+      "body": ["word_to_int(${1:})"],
+      "description": "Convert word to int"
+    },
+    "word_to_dint":{
+      "prefix":"w2di",
+      "body": ["word_to_dint(${1:})"],
+      "description": "Convert word to double int"
+    },
+    "word_to_dword":{
+      "prefix":"w2dw",
+      "body": ["word_to_dword(${1:})"],
+      "description": "Convert word to double word"
+    },
+    "word_to_block_db":{
+      "prefix":"w2db",
+      "body": ["word_to_block_db(${1:})"],
+      "description": "Convert word to block DB"
+    },
+    "block_db_to_word":{
+      "prefix":"db2w",
+      "body": ["block_db_to_word(${1:})"],
+      "description": "Convert block DB to word"
+    },
+    "bcd_to_int":{
+      "prefix":"bcd2i",
+      "body": ["bcd_to_int(${1:})"],
+      "description": "Convert binary coded decimal to int"
+    },
+    "word_bcd_to_int":{
+      "prefix":"wbcd2i",
+      "body": ["word_bcd_to_int(${1:})"],
+      "description": "Convert word binary coded decimal to int"
+    },
+    "int_to_bcd":{
+      "prefix":"i2bcd",
+      "body": ["int_to_bcd(${1:})"],
+      "description": "Convert int to binary coded decimal"
+    },
+    "int_to_bcd_word":{
+      "prefix":"i2bcdw",
+      "body": ["int_to_bcd_word(${1:})"],
+      "description": "Convert int to binary coded decimal word"
+    },
+    "bcd_to_dint":{
+      "prefix":"bcd2di",
+      "body": ["bcd_to_dint(${1:})"],
+      "description": "Convert binary coded decimal to double int"
+    },
+    "dword_bcd_to_dint":{
+      "prefix":"dwbcd2di",
+      "body": ["dword_bcd_to_dint(${1:})"],
+      "description": "Convert double word binary coded decimal to double int"
+    },
+    "dint_to_bcd":{
+      "prefix":"di2bcd",
+      "body": ["dint_to_bcd(${1:})"],
+      "description": "Convert double int to binary coded decimal"
+    },
+    "dint_to_bcd_dword":{
+      "prefix":"di2bcddw",
+      "body": ["dint_to_bcd_dword(${1:})"],
+      "description": "Convert double int to binary coded decimal double word"
+    },
+
+
+
+    "S7_a_type":{
+      "prefix": "S7_a_type",
+      "body" : "S7_a_type",
+      "description" : "The interface parameter is the message number input of message class x or the archive number input"
+    },
+    "S7_active":{
+      "prefix": "S7_active",
+      "body" : "S7_active",
+      "description" : "Identifies the declaration of a parameter"
+    },
+    "S7_alarm_ui":{
+      "prefix": "S7_alarm_ui",
+      "body" : "S7_alarm_ui",
+      "description" : "Message server ID. 0 = default, 1 = PCS 7 message dialog"
+    },
+    "S7_archive":{
+      "prefix": "S7_archive",
+      "body" : "S7_archive",
+      "description" : "Process values that are archived at runtime"
+    },
+    "S7_asset":{
+      "prefix": "S7_asset",
+      "body" : "S7_asset",
+      "description" : "Identifies a block/chart as an asset proxy"
+    },
+    "S7_blockview":{
+      "prefix": "S7_blockview",
+      "body" : "S7_blockview",
+      "description" : "Format or view of a block in CFC"
+    },
+    "S7_check":{
+      "prefix" :"S7_check",
+      "body": "S7_check",
+      "description": "Reserved for SIMATIC BATCH (manufacturing instruction)"
+    },
+    "S7_co":{
+      "prefix" :"S7_co",
+      "body": "S7_co",
+      "description": "Identifies a connection"
+    },
+    "S7_contact":{
+      "prefix": "S7_contact",
+      "body" : "S7_contact",
+      "description": "Parameter belongs to a connection group"
+    },
+    "S7_driver":{
+      "prefix": "S7_driver",
+      "body": "S7_driver",
+      "description" : "ID for the signal preprocessing driver block"
+    },
+    "S7_edit":{
+      "prefix": "S7_edit",
+      "body" : "S7_edit",
+      "description" : "Include the parameter in the Edit parameters/signals table for editing in Manager without opening the CFC chart"
+    },
+    "S7_enum":{
+      "prefix": "S7_enum",
+      "body": "S7_enum",
+      "description" : "Enumeration for SIMATIC BATCH"
+    },
+    "S7_event":{
+      "prefix": "S7_event",
+      "body": "S7_event",
+      "description" : "Indicates parameters to be transferred from the AS to the OS change-driven"
+    },
+    "S7_dynamic":{
+      "prefix": "S7_dynamic",
+      "body" : "S7_dynamic",
+      "description" : "A parameter assigned this system attribute is automatically registered for testing in CFC test mode"
+    },
+    "S7_hardware":{
+      "prefix": "S7_hardware",
+      "body" : "S7_hardware",
+      "description": "ID of a module-specific driver block"
+    },
+    "S7_language":{
+      "prefix": "S7_language",
+      "body" : "S7_language",
+      "description": "Language and time stamp for the Manage Multilingual Texts function"
+    },
+    "S7_link":{
+      "prefix": "S7_link",
+      "body": "S7_link",
+      "description" : "Defines whether the parameter can be interconnected in the CFC"
+    },
+    "S7_linklist":{
+      "prefix": "S7_linklist",
+      "body": "S7_linklist",
+      "description" : "Can be used to assign other blocks to an S7-GRAPH block"
+    },
+    "S7_m_c":{
+      "prefix": "S7_m_c",
+      "body": "S7_m_c",
+      "description":"Defines whether the operator can control and monitor the parameter at an OS"
+    },
+    "S7_measval":{
+      "prefix": "S7_measval",
+      "body": "S7_measval",
+      "description":"Identifies measured points"
+    },
+    "S7_mes":{
+      "prefix": "S7_mes",
+      "body": "S7_mes",
+      "description":"Identifies parameter as MES-relevant"
+    },
+    "S7_message":{
+      "prefix": "S7_message",
+      "body": "S7_message",
+      "description":"Identifies a parameter for communication"
+    },
+    "S7_param":{
+      "prefix": "S7_param",
+      "body": "S7_param",
+      "description" : "Defines whether the parameter can be programmed in the CFC"
+    },
+    "S7_pdiag":{
+      "prefix": "S7_pdiag",
+      "body": "S7_pdiag",
+      "description" : "Block with diagnostic capability for process error diagnostic"
+    },
+    "S7_pdiag_motion":{
+      "prefix": "S7_pdiag_motion",
+      "body": "S7_pdiag_motion",
+      "description" : "UDT for the S7-PDIAG language compiler"
+    },
+    "S7_pdiag_s_unit":{
+      "prefix": "S7_pdiag_s_unit",
+      "body": "S7_pdiag_s_unit",
+      "description" : "UDT for the S7-PDIAG language compiler"
+    },
+    "S7_pdiag_unit":{
+      "prefix": "S7_pdiag_unit",
+      "body": "S7_pdiag_unit",
+      "description" : "UDT for the S7-PDIAG language compiler"
+    },
+    "S7_rawdata":{
+      "prefix": "S7_rawdata",
+      "body": "S7_rawdata",
+      "description" : "Block instance also includes a raw data variable in WinCC"
+    },
+    "S7_read_back":{
+      "prefix": "S7_read_back",
+      "body": "S7_read_back",
+      "description" : "Allocate to the \"Chart > Readback\" function in the CFC"
+    },
+    "S7_sampletime":{
+      "prefix": "S7_sampletime",
+      "body": "S7_sampletime",
+      "description": "A parameter with this system attribute is automatically assigned the cycle time of the calling watchdog interrupt OB"
+    },
+    "S7_server":{
+      "prefix" : "S7_server",
+      "body" : "S7_server",
+      "description": "Identifies a parameter assigned to the message server"
+    },
+    "S7_server_1":{
+      "prefix" : "S7_server_1",
+      "body" : "S7_server_1",
+      "description": "Parameter is assigned to the connection server"
+    },
+    "S7_shortcut":{
+      "prefix": "S7_shortcut",
+      "body": "S7_shortcut",
+      "description": "Contains the parameter name with a maximum string length of 16 characters"
+    },
+    "S7_skipconn":{
+      "prefix": "S7_skipconn",
+      "body": "S7_skipconn",
+      "description": "Prevents code from being generated for the interconection of the block being handled"
+    },
+    "S7_state_rep":{
+      "prefix": "S7_state_rep",
+      "body": "S7_state_rep",
+      "description": "Identifies blocks for automatic alarm hiding in WinCC"
+    },
+    "S7_string_0":{
+      "prefix": "S7_string_0",
+      "body": "S7_string_0",
+      "description" : "Operator text \"0\" for binary values"
+    },
+    "S7_string_1":{
+      "prefix": "S7_string_1",
+      "body": "S7_string_1",
+      "description" : "Operator text \"1\" for binary values"
+    },
+    "S7_tag":{
+      "prefix": "S7_tag",
+      "body": "S7_tag",
+      "description" : "If this system attribute has the value \"false\", the block is not entered inthe tag list of the OS"
+    },
+    "S7_tagcollect":{
+      "prefix": "S7_tagcollect",
+      "body": "S7_tagcollect",
+      "description" : "Reserved for Simatic Batch"
+    },
+    "S7_tasklist":{
+      "prefix": "S7_tasklist",
+      "body": "S7_tasklist",
+      "description": "Contains a list of OBs in which the CFC has to install the block"
+    },
+    "S7_techparam":{
+      "prefix": "S7_techparam",
+      "body": "S7_techparam",
+      "description": "Block is used to assign parameters to technological functions"
+    },
+    "S7_trend":{
+      "prefix": "S7_trend",
+      "body": "S7_trend",
+      "description": "Sets the assignment to the block inputs used as limit values"
+    },
+    "S7_ts":{
+      "prefix": "S7_ts",
+      "body": "S7_ts",
+      "description": "Parameter has a time stamp for transfer to control system"
+    },
+    "S7_unit":{
+      "prefix" : "S7_unit",
+      "body" : "S7_unit",
+      "description":"Contains the name of the parameter\"s physical unit"
+    },
+    "S7_visible":{
+      "prefix": "S7_visible",
+      "body": "S7_visible",
+      "description":"Make parameters in CFC visible or invisible"
+    },
+    "S7_qc":{
+      "prefix": "S7_qc",
+      "body": "S7_qc",
+      "description" : "This attribute identifies parameters which provide the quality code in addition to the process value"
+    },
+    "S7_xarchive":{
+      "prefix": "S7_xarchive",
+      "body" : "S7_xarchive",
+      "description" : "Process values that are archived at runtime. Refers to elements whitin a structure"
+    },
+    "S7_xedit":{
+      "prefix": "S7_xedit",
+      "body" : "S7_xedit",
+      "description" : "Include the parameter in the Edit parameters/signals table for editing in Manager without opening the CFC chart. Refers to elements whitin a structure"
+    },
+    "S7_xm_c":{
+      "prefix": "S7_xm_c",
+      "body": "S7_xm_c",
+      "description":"Defines whether the operator can control and monitor the parameter at an OS. Refers to elements whitin a structure"
+    },
+    "S7_xshortcut":{
+      "prefix": "S7_xshortcut",
+      "body": "S7_xshortcut",
+      "description": "Contains the parameter name with a maximum string length of 16 characters. Refers to elements whitin a structure"
+    },
+    "S7_xstring_0":{
+      "prefix": "S7_xstring_0",
+      "body": "S7_xstring_0",
+      "description" : "Operator text \"0\" for binary values. Refers to elements whitin a structure"
+    },
+    "S7_xstring_1":{
+      "prefix": "S7_xstring_1",
+      "body": "S7_xstring_1",
+      "description" : "Operator text \"1\" for binary values. Refers to elements whitin a structure"
+    },
+    "S7_xtrend":{
+      "prefix": "S7_xtrend",
+      "body": "S7_xtrend",
+      "description": "Sets the assignment to the block inputs used as limit values. Refers to elements whitin a structure"
+    },
+    "S7_xqc":{
+      "prefix": "S7_xqc",
+      "body": "S7_xqc",
+      "description" : "This attribute identifies parameters which provide the quality code in addition to the process value. Refers to elements whitin a structure"
+    },
+
+
+
+    "Function block":{
+        "prefix": "fb",
+        "description":"Function block template",
+        "body": [
+            "\/\/Compiler Option --------------------------------------------",
+            "{S7ServerActive              := 'n'  }",
+            "{SetOKFlag                   := 'n'  }",
+            "{MonitorArrayLimits          := 'n'  }",
+            "{OverwriteBlocks             := 'y'  }",
+            "{CreateObjectCode            := 'y'  }",
+            "{OptimizeObjectCode          := 'y'  }",
+            "{CreateDebugInfo             := 'y'  }",
+            "{GenerateReferenceData       := 'y'  }",
+            "{SetMaximumStringLength      := '254'}",
+            "\/\/------------------------------------------------------------",
+            "FUNCTION_BLOCK \"${1:Name}\"\nTITLE = '[V#01.01.01.01] ${2:Short description}'",
+            "\/\/Copyright (c) 20xx Copyright ${3:Author} All Rights Reserved.",
+            "",
+            "",
+            "",
+            "\/\/===============================================================================",
+            "",
+            "",
+            "",
+            "",
+            "\/\/[V#01.01.01.01],${3:Author},${4:date}\t\tOriginal Version",
+            "AUTHOR\t :\t${3:Author}",
+            "FAMILY\t :\t${5:Family}",
+            "NAME\t\t :\t${1:Name}",
+            "VERSION\t:\t${7:'1.0'}",
+            "KNOW_HOW_PROTECT",
+            "\/\/------------------------------------------------------------------------------------",
+            "\/\/  Declaration of Variables",
+            "\/\/------------------------------------------------------------------------------------",
+            "${8:}",
+            "CONST",
+            "\t\/\/constants",
+            "END_CONST",
+            "",
+            "VAR_INPUT",
+            "\t\/\/inputs",
+            "END_VAR",
+            "",
+            "VAR_IN_OUT",
+            "\t\/\/in_outs",
+            "END_VAR",
+            "",
+            "VAR_OUTPUT",
+            "\t\/\/outputs",
+            "END_VAR",
+            "",
+            "VAR",
+            "\t\/\/variables",
+            "END_VAR",
+            "",
+            "VAR_TEMP",
+            "\t\/\/temporary variables",
+            "END_VAR",
+            "",
+            "\/\/------------------------------------------------------------------------------------",
+            "\/\/  Code Section",
+            "\/\/------------------------------------------------------------------------------------",
+            "",
+            "BEGIN",
+            "\/\/code",
+            "END_FUNCTION_BLOCK"
+        ]
+
+    },
+
+    "Function":{
+        "prefix": "fn",
+        "description":"Function template",
+        "body": [
+            "\/\/Compiler Option --------------------------------------------",
+            "{S7ServerActive              := 'n'  }",
+            "{SetOKFlag                   := 'n'  }",
+            "{MonitorArrayLimits          := 'n'  }",
+            "{OverwriteBlocks             := 'y'  }",
+            "{CreateObjectCode            := 'y'  }",
+            "{OptimizeObjectCode          := 'y'  }",
+            "{CreateDebugInfo             := 'y'  }",
+            "{GenerateReferenceData       := 'y'  }",
+            "{SetMaximumStringLength      := '254'}",
+            "\/\/------------------------------------------------------------",
+            "FUNCTION \"${1:Name}\":${2:DataType}\nTITLE = '[V#01.01.01.01] ${3:Short description}'",
+            "\/\/Copyright (c) 20xx Copyright ${4:Author} All Rights Reserved.",
+            "",
+            "",
+            "",
+            "\/\/===============================================================================",
+            "",
+            "",
+            "",
+            "",
+            "\/\/[V#01.01.01.01],${4:Author},${5:date}\t\tOriginal Version",
+            "AUTHOR\t :\t${4:Author}",
+            "FAMILY\t :\t${6:Family}",
+            "NAME\t\t :\t${1:Name}",
+            "VERSION\t:\t${7:'1.0'}",
+            "KNOW_HOW_PROTECT",
+            "\/\/------------------------------------------------------------------------------------",
+            "\/\/  Declaration of Variables",
+            "\/\/------------------------------------------------------------------------------------",
+            "${8}",
+            "CONST",
+            "\t\/\/constants",
+            "END_CONST",
+            "",
+            "VAR_INPUT",
+            "\t\/\/inputs",
+            "END_VAR",
+            "",
+            "VAR_IN_OUT",
+            "\t\/\/in_outs",
+            "END_VAR",
+            "",
+            "VAR_OUTPUT",
+            "\t\/\/outputs",
+            "END_VAR",
+            "",
+            "VAR",
+            "\t\/\/variables",
+            "END_VAR",
+            "",
+            "VAR_TEMP",
+            "\t\/\/temporary variables",
+            "END_VAR",
+            "",
+            "\/\/------------------------------------------------------------------------------------",
+            "\/\/  Code Section",
+            "\/\/------------------------------------------------------------------------------------",
+            "",
+            "BEGIN",
+            "\/\/code",
+            "END_FUNCTION"
+        ]
+
+    },
+
+    "Data block":{
+        "prefix": "db",
+        "description":"Data block template",
+        "body": [
+            "DATA_BLOCK \"${1:Name}\"",
+            "TITLE = '${2:Short description}'",
+            "\/\/Copyright (c) 20xx Copyright ${3:Author} All Rights Reserved.",
+            "AUTHOR : ${3:Author}",
+            "FAMILY : ${4:Family}",
+            "NAME   : ${1:Name}",
+            "VERSION: ${5:'1.0'}",
+            "NON_RETAIN",
+            "STRUCT",
+            "\t${6://data structure}",
+            "END_STRUCT;",
+            "BEGIN",
+            "\t${7://initial values}",
+            "END_DATA_BLOCK"
+        ]
+    },
+
+    "User Data Type":{
+        "prefix": "udt",
+        "description":"User Data Type template",
+        "body": [
+            "TYPE \"${1:Name}\"",
+            "VERSION : ${2:'1.0'}",
+            "STRUCT",
+            "\t${3://structure elements}",
+            "END_STRUCT;",
+            "END_TYPE"
+        ]
+    },
+
+    "Timer IEC":{
+        "prefix": "timer",
+        "body": [
+            "#${1:timerInstance}(IN := ${2:start_condition},",
+            "\t\t\t\t   PT := ${3:T#5s});",
+            "${4://Timer output: #${1:timerInstance}.Q}"
+        ],
+        "description": "IEC Timer TON declaration and call"
+    },
+
+    "Timer TOF":{
+        "prefix": "tof",
+        "body": [
+            "#${1:timerInstance}(IN := ${2:input_condition},",
+            "\t\t\t\t   PT := ${3:T#5s});",
+            "${4://Timer output: #${1:timerInstance}.Q}"
+        ],
+        "description": "IEC Timer TOF (Timer Off Delay)"
+    },
+
+    "Timer TP":{
+        "prefix": "tp",
+        "body": [
+            "#${1:timerInstance}(IN := ${2:trigger_condition},",
+            "\t\t\t\t  PT := ${3:T#5s});",
+            "${4://Timer output: #${1:timerInstance}.Q}"
+        ],
+        "description": "IEC Timer TP (Timer Pulse)"
+    },
+
+    "Counter CTU":{
+        "prefix": "ctu",
+        "body": [
+            "#${1:counterInstance}(CU := ${2:count_up_condition},",
+            "\t\t\t\t\t   R  := ${3:reset_condition},",
+            "\t\t\t\t\t   PV := ${4:10});",
+            "${5://Counter outputs: #${1:counterInstance}.Q, #${1:counterInstance}.CV}"
+        ],
+        "description": "IEC Counter CTU (Count Up)"
+    },
+
+    "Counter CTD":{
+        "prefix": "ctd",
+        "body": [
+            "#${1:counterInstance}(CD := ${2:count_down_condition},",
+            "\t\t\t\t\t   LD := ${3:load_condition},",
+            "\t\t\t\t\t   PV := ${4:10});",
+            "${5://Counter outputs: #${1:counterInstance}.Q, #${1:counterInstance}.CV}"
+        ],
+        "description": "IEC Counter CTD (Count Down)"
+    },
+
+    "Counter CTUD":{
+        "prefix": "ctud",
+        "body": [
+            "#${1:counterInstance}(CU := ${2:count_up_condition},",
+            "\t\t\t\t\t   CD := ${3:count_down_condition},",
+            "\t\t\t\t\t   R  := ${4:reset_condition},",
+            "\t\t\t\t\t   LD := ${5:load_condition},",
+            "\t\t\t\t\t   PV := ${6:10});",
+            "${7://Counter outputs: #${1:counterInstance}.QU, #${1:counterInstance}.QD, #${1:counterInstance}.CV}"
+        ],
+        "description": "IEC Counter CTUD (Count Up/Down)"
+    },
+
+    "Rising edge detection":{
+        "prefix": "re",
+        "body": [
+            "#${1:edgeInstance}(CLK := ${2:input_signal});",
+            "if #${1:edgeInstance}.Q then",
+            "\t${3://code for rising edge}",
+            "end_if;"
+        ],
+        "description": "Rising edge detection with R_TRIG"
+    },
+
+    "Falling edge detection":{
+        "prefix": "fe",
+        "body": [
+            "#${1:edgeInstance}(CLK := ${2:input_signal});",
+            "if #${1:edgeInstance}.Q then",
+            "\t${3://code for falling edge}",
+            "end_if;"
+        ],
+        "description": "Falling edge detection with F_TRIG"
+    },
+
+    "Error handling block":{
+        "prefix": "error",
+        "body": [
+            "if ${1:error_condition} then",
+            "\t#${2:error_output} := true;",
+            "\t#${3:error_id} := 16#${4:8001};",
+            "\t#${5:status} := 16#${6:8001};",
+            "\treturn;",
+            "end_if;"
+        ],
+        "description": "Error handling pattern with status codes"
+    },
+
+    "Function with error handling":{
+        "prefix": "fnerr",
+        "description":"Function template with error handling",
+        "body": [
+            "FUNCTION \"${1:Name}\" : ${2:DataType}",
+            "TITLE = '[V#01.01.01.01] ${3:Short description}'",
+            "AUTHOR : ${4:Author}",
+            "FAMILY : ${5:Family}",
+            "NAME   : ${1:Name}",
+            "VERSION: ${6:'1.0'}",
+            "",
+            "VAR_INPUT",
+            "\t${7://inputs}",
+            "END_VAR",
+            "",
+            "VAR_OUTPUT",
+            "\tError : Bool;",
+            "\tStatus : Word;",
+            "END_VAR",
+            "",
+            "VAR_TEMP",
+            "\t${8://temporary variables}",
+            "END_VAR",
+            "",
+            "BEGIN",
+            "\/\/ Initialize outputs",
+            "#Error := false;",
+            "#Status := 16#0000;",
+            "",
+            "\/\/ Input validation",
+            "if ${9:validation_condition} then",
+            "\t#Error := true;",
+            "\t#Status := 16#8001;",
+            "\treturn;",
+            "end_if;",
+            "",
+            "\/\/ Main function code",
+            "${10://function implementation}",
+            "",
+            "\/\/ Set return value",
+            "\"${1:Name}\" := ${11:return_value};",
+            "",
+            "END_FUNCTION"
+        ]
+    },
+
+    "Analog scaling":{
+        "prefix": "scale",
+        "body": [
+            "#${1:scaledValue} := NORM_X(VALUE := ${2:rawValue},",
+            "\t\t\t\t\t\t\t  MIN   := ${3:rawMin},",
+            "\t\t\t\t\t\t\t  MAX   := ${4:rawMax}) * (${5:engMax} - ${6:engMin}) + ${6:engMin};"
+        ],
+        "description": "Analog value scaling from raw to engineering units"
+    },
+
+    "PID control basic":{
+        "prefix": "pid",
+        "body": [
+            "#${1:pidInstance}(Setpoint := ${2:setpoint},",
+            "\t\t\t\t Input    := ${3:process_value},",
+            "\t\t\t\t Disturbance := ${4:0.0},",
+            "\t\t\t\t ManualEnable := ${5:false},",
+            "\t\t\t\t ManualValue := ${6:0.0},",
+            "\t\t\t\t Reset := ${7:false},",
+            "\t\t\t\t Hold := ${8:false});",
+            "${9://PID Output: #${1:pidInstance}.Output}"
+        ],
+        "description": "Basic PID controller call"
+    },
+
+    "Move instruction":{
+        "prefix": "move",
+        "body": [
+            "MOVE(IN := ${1:source}, OUT => ${2:destination});"
+        ],
+        "description": "Move instruction for data transfer"
+    },
+
+    "Math functions - ADD":{
+        "prefix": "add",
+        "body": [
+            "${1:result} := ADD(IN1 := ${2:value1}, IN2 := ${3:value2});"
+        ],
+        "description": "Addition function"
+    },
+
+    "Math functions - SUB":{
+        "prefix": "sub",
+        "body": [
+            "${1:result} := SUB(IN1 := ${2:value1}, IN2 := ${3:value2});"
+        ],
+        "description": "Subtraction function"
+    },
+
+    "Math functions - MUL":{
+        "prefix": "mul",
+        "body": [
+            "${1:result} := MUL(IN1 := ${2:value1}, IN2 := ${3:value2});"
+        ],
+        "description": "Multiplication function"
+    },
+
+    "Math functions - DIV":{
+        "prefix": "div",
+        "body": [
+            "${1:result} := DIV(IN1 := ${2:dividend}, IN2 := ${3:divisor});"
+        ],
+        "description": "Division function"
+    },
+
+    "Limit checking":{
+        "prefix": "limit",
+        "body": [
+            "${1:result} := LIMIT(MN := ${2:min_value},",
+            "\t\t\t\t\t IN := ${3:input_value},",
+            "\t\t\t\t\t MX := ${4:max_value});"
+        ],
+        "description": "Limit value between min and max"
+    },
+
+    "Absolute value":{
+        "prefix": "abs",
+        "body": [
+            "${1:result} := ABS(IN := ${2:input_value});"
+        ],
+        "description": "Absolute value function"
+    },
+
+    "Square root":{
+        "prefix": "sqrt",
+        "body": [
+            "${1:result} := SQRT(IN := ${2:input_value});"
+        ],
+        "description": "Square root function"
+    },
+
+    "Exponential":{
+        "prefix": "exp",
+        "body": [
+            "${1:result} := EXP(IN := ${2:input_value});"
+        ],
+        "description": "Exponential function"
+    },
+
+    "Natural logarithm":{
+        "prefix": "ln",
+        "body": [
+            "${1:result} := LN(IN := ${2:input_value});"
+        ],
+        "description": "Natural logarithm function"
+    },
+
+    "Sine function":{
+        "prefix": "sin",
+        "body": [
+            "${1:result} := SIN(IN := ${2:angle_in_radians});"
+        ],
+        "description": "Sine trigonometric function"
+    },
+
+    "Cosine function":{
+        "prefix": "cos",
+        "body": [
+            "${1:result} := COS(IN := ${2:angle_in_radians});"
+        ],
+        "description": "Cosine trigonometric function"
+    },
+
+    "Tangent function":{
+        "prefix": "tan",
+        "body": [
+            "${1:result} := TAN(IN := ${2:angle_in_radians});"
+        ],
+        "description": "Tangent trigonometric function"
+    },
+
+    "String functions - LEN":{
+        "prefix": "strlen",
+        "body": [
+            "${1:length} := LEN(IN := ${2:input_string});"
+        ],
+        "description": "Get string length"
+    },
+
+    "String functions - CONCAT":{
+        "prefix": "strcat",
+        "body": [
+            "${1:result} := CONCAT(IN1 := ${2:string1}, IN2 := ${3:string2});"
+        ],
+        "description": "Concatenate two strings"
+    },
+
+    "String functions - LEFT":{
+        "prefix": "strleft",
+        "body": [
+            "${1:result} := LEFT(IN := ${2:input_string}, L := ${3:length});"
+        ],
+        "description": "Extract left part of string"
+    },
+
+    "String functions - RIGHT":{
+        "prefix": "strright",
+        "body": [
+            "${1:result} := RIGHT(IN := ${2:input_string}, L := ${3:length});"
+        ],
+        "description": "Extract right part of string"
+    },
+
+    "String functions - MID":{
+        "prefix": "strmid",
+        "body": [
+            "${1:result} := MID(IN := ${2:input_string}, L := ${3:length}, P := ${4:position});"
+        ],
+        "description": "Extract middle part of string"
+    },
+
+    "Bit operations - AND":{
+        "prefix": "bitand",
+        "body": [
+            "${1:result} := ${2:value1} AND ${3:value2};"
+        ],
+        "description": "Bitwise AND operation"
+    },
+
+    "Bit operations - OR":{
+        "prefix": "bitor",
+        "body": [
+            "${1:result} := ${2:value1} OR ${3:value2};"
+        ],
+        "description": "Bitwise OR operation"
+    },
+
+    "Bit operations - XOR":{
+        "prefix": "bitxor",
+        "body": [
+            "${1:result} := ${2:value1} XOR ${3:value2};"
+        ],
+        "description": "Bitwise XOR operation"
+    },
+
+    "Bit operations - NOT":{
+        "prefix": "bitnot",
+        "body": [
+            "${1:result} := NOT ${2:value};"
+        ],
+        "description": "Bitwise NOT operation"
+    },
+
+    "Shift operations - SHL":{
+        "prefix": "shl",
+        "body": [
+            "${1:result} := SHL(IN := ${2:input_value}, N := ${3:shift_count});"
+        ],
+        "description": "Shift left operation"
+    },
+
+    "Shift operations - SHR":{
+        "prefix": "shr",
+        "body": [
+            "${1:result} := SHR(IN := ${2:input_value}, N := ${3:shift_count});"
+        ],
+        "description": "Shift right operation"
+    },
+
+    "Selection - SEL":{
+        "prefix": "sel",
+        "body": [
+            "${1:result} := SEL(G := ${2:selector},",
+            "\t\t\t\t\t IN0 := ${3:value_if_false},",
+            "\t\t\t\t\t IN1 := ${4:value_if_true});"
+        ],
+        "description": "Binary selection function"
+    },
+
+    "Selection - MUX":{
+        "prefix": "mux",
+        "body": [
+            "${1:result} := MUX(K := ${2:selector},",
+            "\t\t\t\t\t IN0 := ${3:value0},",
+            "\t\t\t\t\t IN1 := ${4:value1},",
+            "\t\t\t\t\t IN2 := ${5:value2},",
+            "\t\t\t\t\t IN3 := ${6:value3});"
+        ],
+        "description": "Multiplexer selection function"
+    },
+
+    "MIN function":{
+        "prefix": "min",
+        "body": [
+            "${1:result} := MIN(IN1 := ${2:value1}, IN2 := ${3:value2});"
+        ],
+        "description": "Minimum of two values"
+    },
+
+    "MAX function":{
+        "prefix": "max",
+        "body": [
+            "${1:result} := MAX(IN1 := ${2:value1}, IN2 := ${3:value2});"
+        ],
+        "description": "Maximum of two values"
+    },
+
+    "Safety note comment":{
+        "prefix": "safety",
+        "body": [
+            "\/\/=============================================================================",
+            "\/\/ SAFETY NOTE: ${1:Safety consideration description}",
+            "\/\/ This code affects safety-critical operations",
+            "\/\/ Modification requires safety review and validation",
+            "\/\/============================================================================="
+        ],
+        "description": "Safety-critical code comment header"
+    },
+
+    "Performance note comment":{
+        "prefix": "performance",
+        "body": [
+            "\/\/=============================================================================",
+            "\/\/ PERFORMANCE NOTE: ${1:Performance consideration}",
+            "\/\/ Execution time: ${2:estimated_time}",
+            "\/\/ Memory usage: ${3:estimated_memory}",
+            "\/\/============================================================================="
+        ],
+        "description": "Performance consideration comment"
+    },
+
+    "TODO comment":{
+        "prefix": "todo",
+        "body": [
+            "\/\/ TODO: ${1:Description of what needs to be done}",
+            "\/\/ Author: ${2:Author}",
+            "\/\/ Date: ${3:Date}",
+            "\/\/ Priority: ${4:High/Medium/Low}"
+        ],
+        "description": "TODO comment with details"
+    },
+
+    "FIXME comment":{
+        "prefix": "fixme",
+        "body": [
+            "\/\/ FIXME: ${1:Description of the issue}",
+            "\/\/ Bug ID: ${2:Bug_ID}",
+            "\/\/ Workaround: ${3:Current workaround}",
+            "\/\/ Date: ${4:Date}"
+        ],
+        "description": "FIXME comment with bug tracking"
+    }
+
+}
+
+
